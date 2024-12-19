@@ -69,7 +69,7 @@ async function sendVoucherEmail(email, voucherCode, discount, expirationDate) {
 
 // Hàm đăng ký người dùng và gửi voucher
 exports.register = async (req, res) => {
-    const { User_Name, Email, Password} = req.body;
+    const { User_Name, Email, Password } = req.body;
 
     if (!User_Name || !Password || !Email) {
         return res.status(400).json({ message: 'Vui lòng cung cấp đầy đủ thông tin.' });
@@ -142,7 +142,7 @@ exports.login = (req, res) => {
     if (!Email || !Password) {
         return res.status(400).json({ message: 'Vui lòng cung cấp email và mật khẩu.' });
     }
-    let findUserSql = `SELECT * FROM Users WHERE Email = ?`;
+    let findUserSql = `SELECT * FROM users WHERE Email = ?`;
     db.query(findUserSql, [Email], async (err, results) => {
         console.error("Database error:", err);
         if (err) {
