@@ -2,7 +2,7 @@ const db = require('../../config/db');
 
 
 exports.productNew = (req, res) => {
-    let sql = `SELECT * FROM Products ORDER BY Product_ID DESC`;  
+    let sql = `SELECT * FROM products ORDER BY Product_ID DESC`;  
     db.query(sql, (err, data) => {
         if (err) {
             res.json({ "message": "Lỗi lấy danh sách sản phẩm", err });
@@ -12,7 +12,7 @@ exports.productNew = (req, res) => {
     });
 }
 exports.productMostView =  (req, res) => {
-    let sql = `SELECT * FROM Products ORDER BY Views DESC`;  // Sắp xếp theo ID giảm dần
+    let sql = `SELECT * FROM products ORDER BY Views DESC`;  // Sắp xếp theo ID giảm dần
     db.query(sql, (err, data) => {
         if (err) {
             res.json({ "message": "Lỗi lấy danh sách sản phẩm", err });
@@ -22,7 +22,7 @@ exports.productMostView =  (req, res) => {
     });
 }
 exports.productKhuyenMai =  (req, res) => {
-    let sql = `SELECT * FROM Products ORDER BY Promotion DESC`;  
+    let sql = `SELECT * FROM products ORDER BY Promotion DESC`;  
     db.query(sql, (err, data) => {
         if (err) {
             res.json({ "message": "Lỗi lấy danh sách sản phẩm", err });
