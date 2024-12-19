@@ -33,7 +33,7 @@ exports.productKhuyenMai =  (req, res) => {
 }
 
 exports.getAllProducts = (req, res) => {
-    let sql = `SELECT * FROM Products`;
+    let sql = `SELECT * FROM products`;
     db.query(sql, (err, data) => {
         if (err) return res.json({ "message": "Lỗi lấy danh sách sản phẩm", err });
         res.json(data);
