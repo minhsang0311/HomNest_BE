@@ -12,7 +12,7 @@ exports.getAllProducts = (req, res) => {
 exports.getProductDetail = (req, res) => {
     let id = parseInt(req.params.id);
     if (isNaN(id) || id <= 0) {
-        res.json({ "message": "Không tìm được sản phẩm", "id": id });
+        res.json({ "message": "Không tìm được sản phẩmm", "id": id });
         return;
     }
     let sql = `SELECT Product_ID, Category_ID,Brand_ID, Product_Name, Image, Price, Promotion, Description, Views, Show_Hidden 
